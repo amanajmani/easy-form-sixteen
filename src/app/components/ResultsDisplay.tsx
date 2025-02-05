@@ -231,14 +231,16 @@ function NittyGrittiesSection({
         <StatCard
           emoji="📉"
           title="The Tax Ninja Move"
-          description="A simple trick that lowers your taxable income without breaking a sweat."
+          section="16(ia)"
+          description="Every salaried employee gets this automatic deduction, cutting down taxable income with no extra effort."
           value={formatIndianCurrency(standardDeductions)}
         />
 
         <StatCard
           emoji="💰"
           title="Tax Saving Hacks"
-          description="The magic deductions that lower your tax burden."
+          section="80 C, 80CCC and 80CCD(1)"
+          description="Reductions in taxable income from investments, insurance, and expenses you can claim."
           value={formatIndianCurrency(deductions)}
         />
       </div>
@@ -246,22 +248,24 @@ function NittyGrittiesSection({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <StatCard
           emoji="💸"
-          title="LTA"
-          description="LTA"
+          title="Leave Travel Allowance"
+          section="10(5)"
+          description="Tax-free reimbursement for travel within India, covering fares for you and your family."
           value={formatIndianCurrency(lta)}
         />
 
         <StatCard
           emoji="🏠"
           title="Home Sweet Home Allowance"
-          description="The money you get for your rent – a little help from your employer."
+          section="10(13A)"
+          description="A tax break on rent for salaried employees, based on salary and city of residence."
           value={formatIndianCurrency(hra)}
         />
 
         <StatCard
           emoji="🛡️"
-          title="Your Tax-Free Stash"
-          description="Exemptions you’ve claimed to save some money from taxes."
+          title="Exemptions You Claimed"
+          description="Allowances and benefits — like food, phone, and transport—that lower your taxable income."
           value={formatIndianCurrency(totalExemptions)}
         />
       </div>
@@ -287,13 +291,16 @@ function NittyGrittiesSection({
   )
 }
 
-function StatCard({ emoji, title, value, description }: { emoji: string; title: string; value: string, description: string }) {
+function StatCard({ emoji, title, value, description, section }: { emoji: string; title: string; value: string, description: string, section?: string }) {
   return (
     <Card className="py-3 shadow-sm px-1 rounded-3xl border-none">
       <CardContent className="p-4">
         <div className="flex justify-between mb-3">
           <div className="flex flex-col items-start">
-            <h3 className="text-xs md:text-sm font-semibold">{title}</h3>
+            <h3 className="text-xs md:text-sm font-semibold">{title} {section && (
+              <span className="text-xs font-semibold italic text-gray-400 mb-3"> —— {section}</span>
+            )}</h3>
+
             <p className="text-2xl md:text-4xl font-semibold text-gray-800">{value}</p>
           </div>
           <div className="text-2xl md:text-4xl mr-2">{emoji}</div>
