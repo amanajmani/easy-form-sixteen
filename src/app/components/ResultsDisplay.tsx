@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -33,6 +33,14 @@ interface AnimatedSectionProps {
 }
 
 export default function ResultsDisplay() {
+  return (
+    <Suspense fallback={<div>Loading results...</div>}>
+      <ResultsPage />
+    </Suspense>
+  );
+}
+
+function ResultsPage() {
   const [activeSection, setActiveSection] = useState('summary')
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true)
