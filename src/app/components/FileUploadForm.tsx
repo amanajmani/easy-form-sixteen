@@ -194,10 +194,9 @@ export default function FileUploadForm() {
         </div>
 
         {/* Add download link for the sample Form 16 */}
-        <div className="text-center">
-          <p className="text-sm text-gray-500">
-            Not sure how to get your Form 16?
-            <span className="block mt-1">
+        <div className="text-center p-1">
+          <p className="text-xs text-gray-500 italic">
+            <span> Don't have it right now? </span>
               <a
                 href="/sample-form-16.pdf"  // The path to the sample PDF
                 download="Sample_Form16.pdf"
@@ -205,7 +204,6 @@ export default function FileUploadForm() {
               >
                 Download a Sample Form 16
               </a>
-            </span>
           </p>
         </div>
 
