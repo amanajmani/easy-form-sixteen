@@ -168,7 +168,7 @@ export default function FileUploadForm() {
 
   return (
     <Card className="w-full rounded-3xl border-none shadow-none">
-      <div className="space-y-6 p-6">
+      <div className="space-y-2 p-6 pb-2">
         <div
           {...getRootProps()}
           className={`border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all duration-300 ${isDragActive ? 'border-blue-400 bg-blue-400/10' : 'border-gray-300 hover:border-[#F58C98]'
@@ -184,7 +184,7 @@ export default function FileUploadForm() {
             </p>
           </div>
           {uploading && (
-            <div className="mt-4">
+            <div className="mt-2">
               <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-[#F48087] to-[#FFA42C] animate-pulse" style={{ width: '100%' }}></div>
               </div>
@@ -192,6 +192,23 @@ export default function FileUploadForm() {
             </div>
           )}
         </div>
+
+        {/* Add download link for the sample Form 16 */}
+        <div className="text-center">
+          <p className="text-sm text-gray-500">
+            Not sure how to get your Form 16?
+            <span className="block mt-1">
+              <a
+                href="/sample-form-16.pdf"  // The path to the sample PDF
+                download="Sample_Form16.pdf"
+                className="text-[#F48087] hover:text-[#F58C98] font-semibold"
+              >
+                Download a Sample Form 16
+              </a>
+            </span>
+          </p>
+        </div>
+
       </div>
     </Card>
   )
