@@ -66,7 +66,7 @@ export default function TaxableVsNon({
       <CardHeader>
         <CardTitle>Taxable Vs Non-Taxable Income</CardTitle>
       </CardHeader>
-      <CardContent className="p-3 md:p-4">
+      <CardContent className="p-3 md:p-4 mb-14 mt-7">
         <ChartContainer config={chartConfig}>
           <BarChart
             // accessibilityLayer
@@ -104,7 +104,7 @@ export default function TaxableVsNon({
           </BarChart>
         </ChartContainer>
         </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
+      <CardFooter className="flex-col gap-2 text-sm">
         <div className="flex gap-2 font-medium leading-none">
           You have saved {savedMoneyPercentage}% of Your Total Income 💰
         </div>

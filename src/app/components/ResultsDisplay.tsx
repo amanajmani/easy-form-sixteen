@@ -256,7 +256,7 @@ function NittyGrittiesSection({
 
         <StatCard
           emoji="🏠"
-          title="Home Sweet Home Allowance"
+          title="Home Allowance"
           section="10(13A)"
           description="A tax break on rent for salaried employees, based on salary and city of residence."
           value={formatIndianCurrency(hra)}
@@ -295,15 +295,17 @@ function StatCard({ emoji, title, value, description, section }: { emoji: string
   return (
     <Card className="py-3 shadow-sm px-1 rounded-3xl border-none">
       <CardContent className="p-4">
-        <div className="flex justify-between mb-3">
-          <div className="flex flex-col items-start">
-            <h3 className="text-xs md:text-sm font-semibold">{title} {section && (
+        <div className="flex justify-between mb-5">
+          <div className="flex flex-col items-start w-full">
+            <div className="flex flex-row justify-between items-baseline w-full">
+            <h3 className="text-xs md:text-sm font-semibold mb-4">{title} {section && (
               <span className="text-xs font-semibold italic text-gray-400 mb-3"> —— {section}</span>
             )}</h3>
+            <div className="text-xl md:text-xl mr-1">{emoji}</div>
+            </div>
 
-            <p className="text-2xl md:text-4xl font-semibold text-gray-800">{value}</p>
+            <p className="text-xl md:text-4xl font-semibold text-gray-800">{value}</p>
           </div>
-          <div className="text-2xl md:text-4xl mr-2">{emoji}</div>
         </div>
         <p className="text-xs md:text-xs text-gray-500">{description}</p>
       </CardContent>
